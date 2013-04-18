@@ -1,0 +1,22 @@
+{% extends 'layout.twig' %}
+
+{% block contenido %}
+{{ parent() }}
+
+
+{{ page.title }}
+<hr>
+{{ page.body }}
+<hr>
+
+{% setcontent examen_cambridge = 'page/examenes-de-cambridge' %}
+{{ examen_cambridge.title}}
+{{ examen_cambridge.body}}
+
+
+{% setcontent examen_trinity = 'page/examenes-de-trinity' %}
+{{ examen_trinity.title }}
+{{ examen_trinity.body }}
+
+
+{% endblock %}

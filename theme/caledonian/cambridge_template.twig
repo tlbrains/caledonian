@@ -1,0 +1,59 @@
+{% extends 'layout.twig' %}
+
+{% block contenido %}
+{{ parent() }}
+
+{{cambridgesession.title}}
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Examen</th>
+      <th width="75">Nivel</th>
+      <th width="75">Matrícula</th>
+      <th width="75">Fecha examen</th>
+      <th>Notas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ cambridgesession.ket_name }}</td>
+      <td>{{ cambridgesession.ket_level }}</td>
+      <td>{{ cambridgesession.ket_price | number_format(2, ',' , ' ') }} &#8364;</td>
+      <td>{{ cambridgesession.ket_date | date("d/m/Y") }}</td>
+      <td>{{ cambridgesession.ket_annotations }}</td>
+    </tr>
+    <tr>
+      <td>{{ cambridgesession.pet_name }}</td>
+      <td>{{ cambridgesession.pet_level }}</td>
+      <td>{{ cambridgesession.pet_price | number_format(2, ',' , ' ')  }}  &#8364;</td>
+      <td>{{ cambridgesession.pet_date | date("d/m/Y")  }}</td>
+      <td>{{ cambridgesession.pet_annotations }}</td>
+    </tr>
+    <tr>
+      <td>{{ cambridgesession.first_name }}</td>
+      <td>{{ cambridgesession.first_level }}</td>
+      <td>{{ cambridgesession.first_price | number_format(2, ',' , ' ')  }} &#8364;</td>
+      <td>{{ cambridgesession.first_date | date("d/m/Y")  }}</td>
+      <td>{{ cambridgesession.first_annotations }}</td>
+    </tr>
+    <tr>
+      <td>{{ cambridgesession.advanced_name }}</td>
+      <td>{{ cambridgesession.advanced_level }}</td>
+      <td>{{ cambridgesession.advanced_price | number_format(2, ',' , ' ')  }} &#8364;</td>
+      <td>{{ cambridgesession.advanced_date | date("d/m/Y")  }}</td>
+      <td>{{ cambridgesession.advanced_annotations }}</td>
+    </tr>
+    <tr>
+      <td>{{ cambridgesession.proficiency_name }}</td>
+      <td>{{ cambridgesession.proficiency_level }}</td>
+      <td>{{ cambridgesession.proficiency_price | number_format(2, ',' , ' ')  }} &#8364;</td>
+      <td>{{ cambridgesession.proficiency_date | date("d/m/Y")  }}</td>
+      <td>{{ cambridgesession.proficiency_annotations }}</td>
+    </tr>
+
+  </tbody>
+</table>
+{{ cambridgesession.body }}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% block contenido %}
+    <article>
+
+        <h2>{{ record.title }}</h2>
+
+        {% if record.subtitle %}
+            <h3>{{ record.subtitle }}</h3>
+        {% endif %}
+
+        {% for key,value in record.values %}
+
+            {% if record.fieldtype(key) in ['html', 'markdown', 'textarea'] %}
+
+                {{ attribute(record, key) }}
+
+            {% endif %}
+
+        {% endfor %}
+
+    </article>
+
+{% endblock %}
+

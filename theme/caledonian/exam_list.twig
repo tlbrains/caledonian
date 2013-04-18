@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+
+{% block contenido %}
+
+    {{ parent() }}
+
+    <p>Estos son los exámenes</p>
+
+    {% for record in records %}
+        <article>
+            <h2><a href="{{ record.link }}">{{ record.title }} </a></h2>
+        </article>
+
+        <hr>
+
+    {% else %}
+    <article>
+        <h2>No content found.</h2>
+        <p>
+            Unfortunately, no content could be found. Try another page, or go to the
+            <a href="{{ paths.root }}">homepage</a>.
+        </p>
+
+    </article>
+    {% endfor %}
+
+    {# If there are more records than will fit on one page, the pager is shown. #}
+    {{ pager() }}
+
+{% endblock %}

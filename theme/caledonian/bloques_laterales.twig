@@ -1,0 +1,21 @@
+{% block barra_lateral %}
+	
+{% setcontent novedades = 'bloquelateral/novedades' %}
+{{ novedades.title }}
+<hr>
+{{ novedades.text }}
+<hr>
+
+{% setcontent infogeneral = 'bloquelateral/informacion-general' %}
+{{ infogeneral.title }}
+<hr>
+{{ infogeneral.text }}
+<hr>
+
+{% setcontent direccion = 'bloquelateral/direccion' %}
+{{ direccion.title }}
+<hr>
+{{ direccion.text }}
+<hr>
+
+{% endblock %}

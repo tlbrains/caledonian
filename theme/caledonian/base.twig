@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+      <title>
+      {{ app.config.general.sitename }} {{ page.title }}
+
+
+      {#{% if record.title is not defined and app.config.general.payoff is defined %} | {{ app.config.general.payoff }}{% endif %}#}
+    </title>
+
+  <link rel="stylesheet" href="{{ paths.theme }}css/normalize.css" />
+  <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css" />
+  
+
+  <script src="{{ paths.theme }}js/vendor/custom.modernizr.js"></script>
+
+</head>
+
+
+
+<body>
+
+<div class="row">
+	{% block header %}
+    {% include 'header.twig' %}
+
+		Cabecera
+	{% endblock %}
+</div>
+<hr>
+
+<div class="row">
+	{% block layout %}
+
+	{% endblock %}
+
+</div>
+
+<hr>
+<div class="row">
+	{% block footer %}
+		Footer
+	{% endblock %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? '{{ paths.theme }}js/vendor/zepto' : '{{ paths.theme }}js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="{{ paths.theme }}js/foundation.min.js"></script>
+  <!--
+  
+  <script src="{{ paths.theme }}js/foundation/foundation.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.alerts.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.clearing.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.cookie.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.dropdown.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.forms.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.joyride.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.magellan.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.orbit.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.placeholder.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.reveal.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.section.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.tooltips.js"></script>
+  <script src="{{ paths.theme }}js/foundation/foundation.topbar.js"></script>
+  
+  -->
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

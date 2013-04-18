@@ -1,0 +1,22 @@
+
+<nav>
+    <ul>
+    {% for item in menu %}
+
+        <li>
+            <a href="{{ item.link }}">{{item.label}}</a>
+
+        {% if item.submenu is defined %}
+        <ul>
+            {% for item in item.submenu %}
+            <li>
+                <a href="{{ item.link }}">{% if item.label is defined %}{{item.label}}{% endif %}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        </li>
+
+    {% endfor %}
+    </ul>
+</nav>
